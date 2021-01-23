@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>System</RootNamespace>
+
+        <Company>Laurynas Lazauskas</Company>
+        <Authors>Laurynas Lazauskas</Authors>
+        <Product>Poem</Product>
+        <Description>Write fluent code that reads as a well-written poem.</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageId>Poem</PackageId>
+        <PackageProjectUrl>https://github.com/lawrence-laz/tinn-dotnet</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/lawrence-laz/tinn-dotnet</RepositoryUrl>
+        <PackageTags>fluent;extension method;extensions;utils;utilities;helper;</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Copyright>Copyright 2021</Copyright>
+        <Version>1.0.0</Version>
+        <RepositoryType>git</RepositoryType>
+        <PackageIcon>icon.png</PackageIcon>
+        
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="SauceControl.InheritDoc" Version="1.2.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>$(AssemblyName).Tests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../../image/icon.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+    
+</Project>
