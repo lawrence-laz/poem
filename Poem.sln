@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30803.129
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0124327E-F663-4224-A78D-ECB2A0C89BCF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "..\test\Poem.Tests\Tests.csproj", "{3E9DDD9F-0BF8-4BE8-90D4-9980A927E07B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "test\Poem.Tests\Tests.csproj", "{3E9DDD9F-0BF8-4BE8-90D4-9980A927E07B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poem", "Poem\Poem.csproj", "{00176612-DFE1-4E87-A2FE-AC583EC9EE85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poem", "src\Poem\Poem.csproj", "{00176612-DFE1-4E87-A2FE-AC583EC9EE85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
