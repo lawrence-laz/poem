@@ -18,7 +18,7 @@ namespace Poem.Tests.Extensions
             var numberString = expected.ToString(_formatProvider);
 
             // Act
-            var actual = numberString.Parse(_formatProvider);
+            var actual = numberString.ParseFloat(_formatProvider);
 
             // Assert
             actual.Should().Be(expected);
@@ -31,7 +31,7 @@ namespace Poem.Tests.Extensions
             var numberString = expected.ToString();
 
             // Act
-            var actual = numberString.Parse(_numberStyles);
+            var actual = numberString.ParseFloat(_numberStyles);
 
             // Assert
             actual.Should().Be(expected);
@@ -44,7 +44,7 @@ namespace Poem.Tests.Extensions
             var numberString = expected.ToString(_formatProvider);
 
             // Act
-            var actual = numberString.Parse(_numberStyles, _formatProvider);
+            var actual = numberString.ParseFloat(_numberStyles, _formatProvider);
 
             // Assert
             actual.Should().Be(expected);
@@ -57,7 +57,7 @@ namespace Poem.Tests.Extensions
             var numberString = expected.ToString();
 
             // Act
-            var actual = numberString.Parse();
+            var actual = numberString.ParseFloat();
 
             // Assert
             actual.Should().Be(expected);
