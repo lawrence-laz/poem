@@ -11,7 +11,7 @@ namespace Poem.Tests.System.Collections.Generic
 
     {
         [Theory, AutoData]
-        public void Calling_foreach_with_action_should_visit_all_elements(IEnumerable<object> expected)
+        public void Calling_foreach_with_action_visits_all_elements(IEnumerable<object> expected)
         {
             // Arrange
             var actual = new List<object>();
@@ -24,7 +24,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_with_action_and_index_parameter_should_visit_all_elements(IEnumerable<object> expected)
+        public void Calling_foreach_with_action_and_index_parameter_visits_all_elements(IEnumerable<object> expected)
         {
             // Arrange
             var actual = new List<object>();
@@ -37,7 +37,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_with_action_should_return_same_enumerable(IEnumerable<object> expected, Action<object> action)
+        public void Calling_foreach_with_action_returns_same_enumerable(IEnumerable<object> expected, Action<object> action)
         {
             // Act
             var actual = expected.ForEach(action);
@@ -47,7 +47,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_with_action_and_index_parameter_return_same_enumerable(IEnumerable<object> expected, Action<object, int> action)
+        public void Calling_foreach_with_action_and_index_parameter_returns_same_enumerable(IEnumerable<object> expected, Action<object, int> action)
         {
             // Act
             var actual = expected.ForEach(action);
@@ -57,7 +57,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_with_action_and_index_parameter_should_provide_indices_incrementally(int length)
+        public void Calling_foreach_with_action_and_index_parameter_provides_indices_incrementally(int length)
         {
             // Arrange
             var expected = Enumerable.Range(0, length);
@@ -71,7 +71,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_on_null_should_throw(Action<object> action)
+        public void Calling_foreach_on_null_throws(Action<object> action)
         {
             // Arrange
             IEnumerable<object> enumerable = null;
@@ -81,7 +81,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_with_null_should_throw(IEnumerable<object> enumerable)
+        public void Calling_foreach_with_null_throws(IEnumerable<object> enumerable)
         {
             // Arrange
             Action<object> action = null;
@@ -91,7 +91,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_with_index_parameter_on_null_should_throw(Action<object, int> action)
+        public void Calling_foreach_with_index_parameter_on_null_throws(Action<object, int> action)
         {
             // Arrange
             IEnumerable<object> enumerable = null;
@@ -101,7 +101,7 @@ namespace Poem.Tests.System.Collections.Generic
         }
 
         [Theory, AutoData]
-        public void Calling_foreach_with_index_parameter_with_null_should_throw(IEnumerable<object> enumerable)
+        public void Calling_foreach_with_index_parameter_with_null_throws(IEnumerable<object> enumerable)
         {
             // Arrange
             Action<object, int> action = null;

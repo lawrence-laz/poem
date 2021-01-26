@@ -12,7 +12,7 @@ namespace Poem.Tests.Extensions
         private NumberStyles _numberStyles = NumberStyles.AllowDecimalPoint;
 
         [Theory, AutoData]
-        public void Calling_parse_with_format_provider_should_return_same_result_as_standard_method(float expected)
+        public void Calling_parse_with_format_provider_returns_same_result_as_standard_method(float expected)
         {
             // Arrange
             var numberString = expected.ToString(_formatProvider);
@@ -25,7 +25,7 @@ namespace Poem.Tests.Extensions
         }
 
         [Theory, AutoData]
-        public void Calling_parse_with_number_styles_should_return_same_result_as_standard_method(float expected)
+        public void Calling_parse_with_number_styles_returns_same_result_as_standard_method(float expected)
         {
             // Arrange
             var numberString = expected.ToString();
@@ -38,7 +38,7 @@ namespace Poem.Tests.Extensions
         }
 
         [Theory, AutoData]
-        public void Calling_parse_with_number_styles_and_format_provider_should_return_same_result_as_standard_method(float expected)
+        public void Calling_parse_with_number_styles_and_format_provider_returns_same_result_as_standard_method(float expected)
         {
             // Arrange
             var numberString = expected.ToString(_formatProvider);
@@ -51,7 +51,7 @@ namespace Poem.Tests.Extensions
         }
 
         [Theory, AutoData]
-        public void Calling_parse_should_return_same_result_as_standard_method(float expected)
+        public void Calling_parse_returns_same_result_as_standard_method(float expected)
         {
             // Arrange
             var numberString = expected.ToString();
