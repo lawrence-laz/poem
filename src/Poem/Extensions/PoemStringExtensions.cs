@@ -1,4 +1,6 @@
-﻿namespace System
+﻿using System.Collections.Generic;
+
+namespace System
 {
     /// <summary>
     /// Extension methods for fluent handling of <see cref="string"/> objects.
@@ -10,5 +12,8 @@
 
         /// <inheritdoc cref="string.IsNullOrWhiteSpace(string)"/>
         public static bool IsNullOrWhiteSpace(this string value) => string.IsNullOrWhiteSpace(value);
+
+        /// <inheritdoc cref="string.Join(string, IEnumerable{string})"/>.
+        public static string Join(this IEnumerable<string> values, string separator) => string.Join(separator, values);
     }
 }

@@ -1,5 +1,7 @@
-﻿using FluentAssertions;
+﻿using AutoFixture.Xunit2;
+using FluentAssertions;
 using System;
+using System.Linq;
 using Xunit;
 
 namespace Poem.Tests.Extensions
@@ -40,6 +42,19 @@ namespace Poem.Tests.Extensions
             actual.Should().Be(expected);
         }
 
+        [Theory]
+        [AutoData]
+        public void Calling_join_on_a_string_array_with_multichar_separator_returns_a_single_string(
+            string[] values, string separator)
+        {
+            // Arrange
+            var expected = string.Join(separator, values);
 
+            // Act
+            var actual = values.Join(separator);
+
+            // Assert
+            actual.Should().Be(expected);
+        }
     }
 }
