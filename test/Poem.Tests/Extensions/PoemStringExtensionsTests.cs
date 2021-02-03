@@ -56,5 +56,34 @@ namespace Poem.Tests.Extensions
             // Assert
             actual.Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("", "bar", "")]
+        [InlineData("foobar", "bar", "foo")]
+        [InlineData("foobarbar", "bar", "foo")]
+        [InlineData("foobar", "fizz", "foobar")]
+        [InlineData("foo   ", "", "foo")]
+        [InlineData("foo   ", null, "foo")]
+        public void Calling_trim_end_on_a_string_with_a_string_should_remove_all_occurances_or_remove_whitespaces_if_trim_string_is_null(
+            string currentValue, string trimString, string expected)
+        {
+            // Act
+            var actual = currentValue.TrimEnd(trimString);
+
+            // Assert
+            actual.Should().Be(expected);
+        }
+
+        [Theory]
+        [AutoData]
+        public void Calling_trim_end_on_a_null_should_throw(string trimString)
+        {
+            // Arrange
+            string nullValue = null;
+
+            // Act & Assert
+            nullValue.Invoking(x => x.TrimEnd(trimString))
+                .Should().ThrowExactly<ArgumentNullException>();
+        }
     }
 }
