@@ -183,8 +183,8 @@ foreach (var name in adultNames)
 {
     Console.WriteLine($"Customer: {name}")
 }
-// Marry
-// John
+// Customer: Marry
+// Customer: John
 ```
 
 </td>
@@ -195,9 +195,9 @@ foreach (var name in adultNames)
 customers
     .Where(x => x.Age >= 18)
     .Select(x => x.Name)
-    .ForEach(x => Console.WriteLine(x));
-// Marry
-// John
+    .ForEach(x => Console.WriteLine($"Customer: {x}"));
+// Customer: Marry
+// Customer: John
 ```
 
 </td>
