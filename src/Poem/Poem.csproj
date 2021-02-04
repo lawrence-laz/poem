@@ -10,13 +10,13 @@
         <Description>Write fluent code that reads as a well-written poem.</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageId>Poem</PackageId>
-        <PackageProjectUrl>https://github.com/lawrence-laz/tinn-dotnet</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/lawrence-laz/tinn-dotnet</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/lawrence-laz/poem</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/lawrence-laz/poem</RepositoryUrl>
         <PackageTags>fluent;extension method;extensions;utils;utilities;helper;</PackageTags>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <Copyright>Copyright 2021</Copyright>
-        <Version>1.3.0</Version>
+        <Version>1.3.1</Version>
         <RepositoryType>git</RepositoryType>
         <PackageIcon>icon.png</PackageIcon>
         
