@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
 
-namespace System
-{
     /// <summary>
     /// Extension methods for fluent handling of <see cref="string"/> objects.
     /// </summary>
@@ -48,4 +47,3 @@ namespace System
             return currentValue;
         }
     }
-}

@@ -1,7 +1,6 @@
 ﻿using AutoFixture.Xunit2;
 using FluentAssertions;
 using System;
-using System.Linq;
 using Xunit;
 
 namespace Poem.Tests.Extensions
