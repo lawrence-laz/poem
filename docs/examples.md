@@ -203,4 +203,40 @@ customers
 </td>
 </tr>
 
+<tr>
+<td>
+
+```csharp
+var exceptions = new List<Exceptions>();
+foreach (var item in list)
+{
+    try
+    {
+        ...
+    }
+    catch (Exception e)
+    {
+        exceptions.Add(e);
+    }
+}
+if (exceptions.Count > 0)
+{
+    throw new AggregateExcpetion(exceptions);
+}
+```
+
+</td>
+
+<td>
+
+```csharp
+list.ForEachWithAggregatedExceptions(item =>
+{
+    ...
+});
+```
+
+</td>
+</tr>
+
 </table>
