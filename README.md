@@ -22,7 +22,7 @@ Enumerable
 // 2
 // 3
 ```
-For more examples look [**here**](docs/examples.md).
+🔴 For more examples look  [**here**](docs/examples.md).
 
 # Improvements
 
