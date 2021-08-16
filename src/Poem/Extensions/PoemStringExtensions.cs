@@ -46,4 +46,36 @@ public static class PoemStringExtensions
 
         return currentValue;
     }
+
+    /// <summary>
+    /// Removes all preceding occurrences of a specified string.
+    /// </summary>
+    /// <param name="currentValue">A string to be trimmed.</param>
+    /// <param name="trimString">A string to remove.</param>
+    /// <returns>
+    /// The string that remains after all occurrences of the <paramref name="trimString"/>
+    /// are removed from the start of the current string. If <paramref name="trimString"/> is 
+    /// null or an empty string, Unicode white-space characters are removed instead. If no
+    /// characters can be trimmed from the current instance, the method returns the current
+    /// instance unchanged.
+    /// </returns>
+    public static string TrimStart(this string currentValue, string trimString = null)
+    {
+        if (currentValue is null)
+        {
+            throw new ArgumentNullException(nameof(currentValue));
+        }
+
+        if (trimString.IsNullOrEmpty())
+        {
+            return currentValue.TrimStart(trimChars: null);
+        }
+
+        while (currentValue.StartsWith(trimString))
+        {
+            currentValue = currentValue.Substring(trimString.Length, currentValue.Length - trimString.Length);
+        }
+
+        return currentValue;
+    }
 }
