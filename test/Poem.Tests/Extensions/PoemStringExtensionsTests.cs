@@ -113,5 +113,29 @@ namespace Poem.Tests.Extensions
             nullValue.Invoking(x => x.TrimStart(trimString))
                 .Should().ThrowExactly<ArgumentNullException>();
         }
+
+        [Theory]
+        [InlineData("foo", "FOO", true)]
+        [InlineData("Foo", "fOO", true)]
+        [InlineData("FOO", "BAR", false)]
+        [InlineData("FŪŲ", "fūų", true)]
+        [InlineData("BĄR", "bąr", true)]
+        [InlineData("1FOO@.", "1foo@.", true)]
+        [InlineData("FOO bar", "foo BAR", true)]
+        public void Calling_equals_ignore_case_should_return_true_if_only_casing_differs(string left, string right, bool expected)
+        {
+            // Act & Assert
+            left.EqualsIgnoreCase(right).Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData("foo", null)]
+        [InlineData(null, "bar")]
+        public void Calling_equals_ignore_case_with_null_should_throw(string left, string right)
+        {
+            // Act & Assert
+            left.Invoking(x => x.EqualsIgnoreCase(right))
+                .Should().Throw<ArgumentNullException>();
+        }
     }
 }

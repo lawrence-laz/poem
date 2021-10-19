@@ -78,4 +78,25 @@ public static class PoemStringExtensions
 
         return currentValue;
     }
+
+    /// <summary>
+    /// Compares two strings disregarding their casing (using <see cref="StringComparison.OrdinalIgnoreCase"/>).
+    /// </summary>
+    /// <param name="left">First string to be compared against the second one.</param>
+    /// <param name="right">Second string to be compared against the first one.</param>
+    /// <returns>True if provided strings are equal, false otherwise.</returns>
+    public static bool EqualsIgnoreCase(this string left, string right)
+    {
+        if (left is null)
+        {
+            throw new ArgumentNullException(nameof(left));
+        }
+
+        if (right is null)
+        {
+            throw new ArgumentNullException(nameof(right));
+        }
+
+        return string.Equals(left, right, StringComparison.OrdinalIgnoreCase);
+    }
 }
