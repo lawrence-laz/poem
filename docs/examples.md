@@ -97,6 +97,29 @@ customers
 </td>
 </tr>
 
+<tr>
+<td>
+
+```csharp
+string.Equals(
+    "FOO", 
+    "foo", 
+    StringComparison.OrdinalIgnoreCase)
+// True
+```
+
+</td>
+
+<td>
+
+```csharp
+"FOO".EqualsIgnoreCase("foo");
+// True
+```
+
+</td>
+</tr>
+
 </table>
 
 # Float methods
