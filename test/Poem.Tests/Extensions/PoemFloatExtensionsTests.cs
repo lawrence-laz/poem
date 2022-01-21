@@ -1,4 +1,4 @@
-﻿using AutoFixture.Xunit2;
+using AutoFixture.Xunit2;
 using FluentAssertions;
 using System;
 using System.Globalization;
@@ -8,8 +8,8 @@ namespace Poem.Tests.Extensions
 {
     public class PoemFloatExtensionsTests
     {
-        private IFormatProvider _formatProvider = new CultureInfo("en-US");
-        private NumberStyles _numberStyles = NumberStyles.AllowDecimalPoint;
+        private readonly IFormatProvider _formatProvider = new CultureInfo("en-US");
+        private readonly NumberStyles _numberStyles = NumberStyles.AllowDecimalPoint;
 
         [Theory, AutoData]
         public void Calling_parse_with_format_provider_returns_same_result_as_standard_method(float expected)
