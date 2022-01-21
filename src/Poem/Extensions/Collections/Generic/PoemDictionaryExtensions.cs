@@ -32,7 +32,10 @@ namespace System.Collections.Generic
                 throw new ArgumentNullException(nameof(factory));
 
             if (!dictionary.TryGetValue(key, out var value))
-                dictionary.Add(key, (value = factory()));
+            {
+                value = factory();
+                dictionary.Add(key, value);
+            }
 
             return value;
         }
