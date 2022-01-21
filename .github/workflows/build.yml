@@ -19,5 +19,14 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test
+    - name: Test and generate coverage report
+      run: |
+        cd ./test/Poem.Tests/
+        dotnet build
+        dotnet test --no-build /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=opencover
+        cd ./TestResults/
+        mv ./coverage.opencover.xml ./opencover.xml
+    - name: Publish coverage report to Codacity
+      uses: codacy/codacy-coverage-reporter-action@master
+      with:
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
