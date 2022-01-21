@@ -1,4 +1,4 @@
-using AutoFixture.Xunit2;
+﻿using AutoFixture.Xunit2;
 using FluentAssertions;
 using System;
 using System.Globalization;
@@ -28,7 +28,7 @@ namespace Poem.Tests.Extensions
         public void Calling_parse_with_number_styles_returns_same_result_as_standard_method(float expected)
         {
             // Arrange
-            var numberString = expected.ToString();
+            var numberString = expected.ToString(CultureInfo.InvariantCulture);
 
             // Act
             var actual = numberString.ParseFloat(_numberStyles);
@@ -54,7 +54,7 @@ namespace Poem.Tests.Extensions
         public void Calling_parse_returns_same_result_as_standard_method(float expected)
         {
             // Arrange
-            var numberString = expected.ToString();
+            var numberString = expected.ToString(CultureInfo.InvariantCulture);
 
             // Act
             var actual = numberString.ParseFloat();
