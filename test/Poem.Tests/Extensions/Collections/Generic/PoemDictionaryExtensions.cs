@@ -12,7 +12,7 @@ namespace Poem.Tests.System.Collections.Generic
         {
             var key = new object();
             var expected = new object();
-            var sut = new Dictionary<object, object>() { [key] = expected };
+            var sut = new Dictionary<object, object> { [key] = expected };
 
             var actual = sut.GetOrAdd(key, () => null);
 
