@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-/// <summary>
+﻿/// <summary>
 /// Extension methods for fluent handling of <see cref="string"/> objects.
 /// </summary>
 public static class PoemStringExtensions

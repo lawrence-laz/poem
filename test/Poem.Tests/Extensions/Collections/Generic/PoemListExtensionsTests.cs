@@ -1,36 +1,28 @@
-﻿using AutoFixture.Xunit2;
-using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Xunit;
+﻿namespace Poem.Tests.Extensions.Collections.Generic;
 
-namespace Poem.Tests.Extensions.Collections.Generic
+public class PoemListExtensionsTests
 {
-    public class PoemListExtensionsTests
+    [Theory, AutoData]
+    public void Calling_AddToStart_on_null_should_add_element_to_start(IEnumerable<object> expected)
     {
-        [Theory, AutoData]
-        public void Calling_AddToStart_on_null_should_add_element_to_start(IEnumerable<object> expected)
-        {
-            // Arrange
-            var actual = new List<object>(expected.Skip(1));
+        // Arrange
+        var actual = new List<object>(expected.Skip(1));
 
-            // Act
-            actual.AddToStart(expected.First());
+        // Act
+        actual.AddToStart(expected.First());
 
-            // Assert
-            actual.Should().BeEquivalentTo(expected);
-        }
+        // Assert
+        actual.Should().BeEquivalentTo(expected);
+    }
 
-        [Theory, AutoData]
-        public void Calling_AddToStart_on_null_should_throw(object anyItem)
-        {
-            // Arrange
-            List<object> actual = null;
+    [Theory, AutoData]
+    public void Calling_AddToStart_on_null_should_throw(object anyItem)
+    {
+        // Arrange
+        List<object> actual = null;
 
-            // Act & Assert
-            actual.Invoking(x => x.AddToStart(anyItem))
-                .Should().Throw<NullReferenceException>();
-        }
+        // Act & Assert
+        actual.Invoking(x => x.AddToStart(anyItem))
+            .Should().Throw<NullReferenceException>();
     }
 }
