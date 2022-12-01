@@ -25,7 +25,10 @@ public class ForEachWithAggregatedExceptionsTests
                 }
             });
         }
-        catch (Exception) { }
+        catch (AggregateException)
+        {
+            // This test doesn't check if AggregateException is thrown at the end.
+        }
 
         // Assert
         actual.Should().BeEquivalentTo(expected);
