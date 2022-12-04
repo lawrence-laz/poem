@@ -31,4 +31,17 @@ public static class PoemIntExtensions
 
         return value;
     }
+
+    /// <inheritdoc cref="int.Parse(string, IFormatProvider)"/>
+    public static int ParseInt(this string s, IFormatProvider provider) => int.Parse(s, provider);
+
+    /// <inheritdoc cref="int.Parse(string, NumberStyles, IFormatProvider)"/>
+    public static int ParseInt(this string s, NumberStyles style, IFormatProvider provider) => int.Parse(s, style, provider);
+
+    /// <inheritdoc cref="int.Parse(string, NumberStyles)"/>
+    public static int ParseInt(this string s, NumberStyles style) => int.Parse(s, style);
+
+    /// <inheritdoc cref="int.Parse(string)"/>
+    public static int ParseInt(this string s) => int.Parse(s);
+
 }
